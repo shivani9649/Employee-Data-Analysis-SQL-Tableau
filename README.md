@@ -1,28 +1,46 @@
-# Employee-Data-Analysis-SQL-Tableau
-This project is aimed to In-Depth Analysis of Employee Demographics, Tenure, and Turnover in a Corporate Setting. I cleaned the data and then ran some queries to get results which can be used to understand the employee behavior, if they are satisfied with the hr policies, turnover of employees, avg duration of employment etc
-<br>
-Language Used: SQL
-<br>
-Tools: Tableau, MySQL workbench
-<br>
-Author: Shivani 
-## Data Used
-Data - HR Data with over 22000 rows from the year 2000 to 2020.
-<br>
-Data Cleaning - MySQL, Jupyter Notebook
-<br>
-Data Visualization - PowerBI
+# Employee Data Analysis: SQL & Tableau
 
-## Summary of Findings
-- Out of all the 18 above age group 51% were males, 46% were females and 3% were non-confirming, stating that the company has more male employees.
-- The gender distribution across departments is fairly balanced but there are more male than female employees.
-- White race is the most dominant holding about 29% of the overall ethnicity breakdown, while Native Hawaiian and American Indians were only 6% making them the least dominant or minority.
-- The youngest employee working is 20 years old and the oldest is 57 years old.
-- Five age groups were created (18-24, 25-34, 35-44, 45-54, 55-64). The majority of employees were between 25-34 followed by 35-44 while the smallest group was 55-64.
-- 75% of employees were working at the headquarters versus remotely.
-- The average length of employment for terminated employees is around 8 years.
-- Gender the length of employment for males was 8 while for females it was 7
-- The Auditing department has the highest turnover rate followed by the legal and Training department. The lowest turnover rate is in Marketing and business development. A low turnover rate implies that your employees are engaged, satisfied, and motivated enough to be with company for a long time
-- A large number of employees come from the state of Ohio.
-- The net change in employees has increased over the years.
-- The average tenure for each department is about 8 years with Legal and Auditing having the highest and Services, Sales and Marketing having the lowest.
+This project focuses on conducting an in-depth analysis of employee demographics, tenure, and turnover within a corporate setting. The dataset comprises HR data spanning from the year 2000 to 2020, totaling over 22,000 rows. The data was meticulously cleaned using **MySQL**, and the insights were visualized using **Tableau**.
+
+## Data Used
+
+**Dataset**: HR Data
+- **Rows**: Over 22,000 rows
+- **Timeframe**: Data covers the years 2000 to 2020.
+
+## Data Cleaning & Analysis
+
+**Tools Used**: MySQL Workbench
+- The dataset underwent thorough cleaning and analysis to prepare it for further exploration.
+
+## Data Visualization
+
+**Tool Used**: Tableau
+- The cleaned data was visualized using Tableau to provide clear insights and facilitate data-driven decision-making.
+
+## Key Findings
+- **Gender Distribution**: Among employees aged 18 and above, 51% were males, 46% were females, and 3% did not conform to binary gender categories, indicating a higher male presence in the company.
+
+- **Departmental Gender Balance**: Gender distribution across departments is relatively balanced, but the overall workforce contains more male employees.
+
+- **Ethnicity Breakdown**: The majority of employees (29%) identify as White, while Native Hawaiian and American Indian ethnicities make up only 6% of the workforce, representing the minority.
+
+- **Age Diversity**: Employees span a wide age range, with the youngest being 20 and the oldest 57. Age groups were categorized as 18-24, 25-34, 35-44, 45-54, and 55-64, with the 25-34 group being the largest.
+
+- **Work Location Preference**: Approximately 75% of employees work at the headquarters, while the rest work remotely.
+
+- **Average Tenure**: The average length of employment for terminated employees is approximately 8 years, with a slight difference between genders (8 years for males and 7 years for females).
+
+- **Turnover Rate by Department**: The Auditing department has the highest turnover rate, followed by Legal and Training, while Marketing and Business Development have the lowest turnover rate. Lower turnover rates suggest higher employee engagement and satisfaction.
+
+- **Geographic Distribution**: A significant portion (around 81%) of employees hail from Ohio.
+
+- **Employee Growth**: Over the years, there has been a net increase in the number of employees.
+
+- **Tenure by Department**: On average, employees across all departments have a tenure of about 8 years, with Legal and Auditing having the highest and Services, Sales, and Marketing having the lowest.
+
+## Limitations
+- Records with negative ages (967 records which is 4% of total data) were excluded from the analysis. The ages considered were 18 years and above.
+- Records with term dates far into the future (1599 records) were not included in the analysis. Only term dates less than or equal to the current date were considered.
+
+**Author**: Shivani
