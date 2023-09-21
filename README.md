@@ -31,7 +31,7 @@ This project focuses on conducting an in-depth analysis of employee demographics
 
 - **Average Tenure**: The average length of employment for terminated employees is approximately 8 years, with a slight difference between genders (8 years for males and 7 years for females).
 
-- **Turnover Rate by Department**: The Auditing department has the highest turnover rate, followed by Legal and Training, while Marketing and Business Development have the lowest turnover rate. Lower turnover rates suggest higher employee engagement and satisfaction.
+- **Turnover Rate by Department**: The Marketing department has the highest turnover rate, followed by Training and Human Resources, while Research Development and support have the lowest turnover rate. Lower turnover rates suggest higher employee engagement and satisfaction.
 
 - **Geographic Distribution**: A significant portion (around 81%) of employees hail from Ohio.
 
