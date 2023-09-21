@@ -86,7 +86,7 @@ SELECT department,
     terminated_count/total_count AS termination_rate, round(terminated_count*100/total_count) as percentage
 FROM (SELECT department,
 	COUNT(*) AS total_count,
-    SUM(CASE WHEN termdate <= curdate() AND termdate IS NOT NULL THEN 1 ELSE 0 END) AS terminated_count
+    SUM(CASE WHEN termdate <= curdate() AND termdate IS NULL THEN 1 ELSE 0 END) AS terminated_count
     FROM hr
     WHERE age >= 18
     GROUP BY department) AS subquery
