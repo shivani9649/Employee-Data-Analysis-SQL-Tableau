@@ -83,14 +83,15 @@ ORDER BY jobtitle DESC;
 SELECT department,
 	total_count,
     terminated_count,
-    terminated_count/total_count AS termination_rate
+    terminated_count/total_count AS termination_rate,
+    terminated_count*100/total_count AS percentage
 FROM (SELECT department,
 	COUNT(*) AS total_count,
-    SUM(CASE WHEN termdate <= curdate() AND termdate is not null THEN 1 ELSE 0 END) AS terminated_count
+    SUM(CASE WHEN termdate <= curdate() or termdate is null THEN 1 ELSE 0 END) AS terminated_count
     FROM hr
     WHERE age >= 18
     GROUP BY department) AS subquery
-ORDER BY termination_rate;
+ORDER BY termination_rate DESC
 
 -- 9. What is the distribution of employees across locations by city and state?
 SELECT location_state, COUNT(*) AS count
