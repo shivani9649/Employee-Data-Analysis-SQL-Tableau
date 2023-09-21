@@ -61,7 +61,7 @@ GROUP BY location;
 -- 5. What is the average length of employment for employees who have been terminated?
 SELECT round(avg(datediff(termdate, hire_date))/365,0) AS avg_length_employment
 FROM hr
-WHERE termdate <= curdate() AND termdate <> '0000-00-00' AND age >= 18;
+WHERE termdate <= curdate() AND termdate IS NOT NULL AND age >= 18;
 
 -- 6. How does the gender distribution vary across departments and job titles?
 SELECT department, gender, COUNT(*) AS count
@@ -83,15 +83,14 @@ ORDER BY jobtitle DESC;
 SELECT department,
 	total_count,
     terminated_count,
-    terminated_count/total_count AS termination_rate
+    terminated_count/total_count AS termination_rate, round(terminated_count*100/total_count) as percentage
 FROM (SELECT department,
 	COUNT(*) AS total_count,
-    SUM(CASE WHEN termdate <= curdate() AND termdate = '0000-00-00' THEN 1 ELSE 0 END) AS terminated_count
+    SUM(CASE WHEN termdate <= curdate() AND termdate IS NOT NULL THEN 1 ELSE 0 END) AS terminated_count
     FROM hr
     WHERE age >= 18
     GROUP BY department) AS subquery
 ORDER BY termination_rate;
-
 
 -- 9. What is the distribution of employees across locations by city and state?
 SELECT location_state, COUNT(*) AS count
@@ -112,7 +111,7 @@ FROM(
 	SELECT
     YEAR(hire_date) AS year,
     COUNT(*) as hires,
-    SUM(CASE WHEN termdate <= curdate() AND termdate <> '0000-00-00' THEN 1 ELSE 0 END) AS terminations
+    SUM(CASE WHEN termdate <= curdate() AND termdate IS NOT NULL THEN 1 ELSE 0 END) AS terminations
     FROM hr
     WHERE age >= 18
     GROUP BY year(hire_date)
@@ -122,5 +121,5 @@ ORDER BY year ASC;
 -- 11. What is the tenure distribution for each department?
 SELECT department, round(avg(datediff(termdate, hire_date)/365),0) AS avg_tenure
 FROM hr
-WHERE termdate <= curdate() AND termdate <> '0000-00-00' AND age >= 18
+WHERE termdate <= curdate() AND termdate IS NOT NULL AND age >= 18
 GROUP BY department;
